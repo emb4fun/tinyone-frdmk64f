@@ -1,0 +1,147 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="frdmk64f-boot-sd" target="8" version="2">
+  <configuration Name="Debug" hidden="Yes" />
+  <configuration Name="Flash to RAM" hidden="Yes" />
+  <configuration
+    Name="Flash to RAM Debug"
+    inherited_configurations="Flash to RAM;Debug" />
+  <configuration
+    Name="Flash to RAM Release"
+    inherited_configurations="Flash to RAM;Release" />
+  <configuration Name="RAM" hidden="Yes" />
+  <configuration Name="RAM Debug" inherited_configurations="RAM;Debug" />
+  <configuration Name="RAM Release" inherited_configurations="Release;RAM" />
+  <configuration Name="Release" hidden="Yes" />
+  <project Name="frdmk64f-boot-sd">
+    <configuration
+      Name="Common"
+      Placement="Flash"
+      Target="MK64FN1M0xxx12"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_interwork="No"
+      arm_linker_heap_size="256"
+      arm_linker_process_stack_size="2048"
+      arm_linker_stack_size="2048"
+      arm_simulator_memory_simulation_parameter="ROM;0x00000000;0x00100000;RAM;0x1FFF0000;0x00010000;RAM;0x20000000;0x00030000"
+      arm_supply_absolute_file_path="No"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_device_name="MK64FN1M0xxx12"
+      arm_target_interface_type="SWD"
+      build_intermediate_directory="$(Configuration)"
+      build_output_directory="$(Configuration)"
+      c_preprocessor_definitions="__VTOR_CONFIG;CPU_MK64FN1M0VLL12;INITIALIZE_STACK;USE_BOARD_FRDMK64F;RTOS_TCTS;SD_ENABLED"
+      c_user_include_directories="..\\library\\tal_frdmk64f\\board\\frdmk64f\\inc;..\\library\\tal_frdmk64f\\core\\inc;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\inc;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\cmsis\\core;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\cmsis\\device;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\drivers;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\components\\gpio;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\components\\lists;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\components\\osa;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\middleware\\sdmmc\\common;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\middleware\\sdmmc\\host\\sdhc;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\middleware\\sdmmc\\osa;..\\library\\tal_frdmk64f\\cpu\\nxp\\k64\\sdk\\v2110\\middleware\\sdmmc\\sd;..\\library\\tcts\\inc;..\\library\\adler32;..\\library\\fatfs\\src;..\\inc"
+      debug_register_definition_file="$(ProjectDir)/MK64F12_Registers.xml"
+      debug_target_connection="J-Link"
+      gcc_debugging_level="Level 3"
+      gcc_entry_point="Reset_Handler"
+      linker_memory_map_file="$(ProjectDir)/MK64FN1M0xxx12_MemoryMap.xml"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_script_file="$(ProjectDir)/MK64F12_Target.js"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration Name="Debug" c_preprocessor_definitions="__DEBUG__" />
+    <configuration
+      Name="Flash to RAM"
+      c_preprocessor_definitions="__FLASH_TO_RAM__;ENABLED_WDOG;__VECTORS_IN_RAM"
+      linker_output_format="hex"
+      linker_section_placement_file="$(ProjectDir)/placement_flash_to_ram.xml" />
+    <configuration
+      Name="RAM"
+      c_preprocessor_definitions="__RAM__"
+      linker_section_placement_file="$(ProjectDir)/placement_ram.xml" />
+    <configuration
+      Name="Release"
+      c_preprocessor_definitions="__RELEASE__"
+      gcc_optimization_level="Level 2 for size" />
+    <folder Name="library">
+      <folder Name="adler32">
+        <file file_name="../library/adler32/adler32.c" />
+      </folder>
+      <folder Name="fatfs">
+        <file file_name="../library/fatfs/src/ff.c" />
+        <file file_name="../library/fatfs/src/ffunicode.c" />
+      </folder>
+      <folder Name="tal">
+        <folder Name="board">
+          <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/fatfs_diskio.c" />
+          <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/sdmmc_config.c" />
+          <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/talboard.c" />
+          <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/talgpio.c" />
+          <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/talled.c" />
+        </folder>
+        <folder Name="core">
+          <file file_name="../library/tal_frdmk64f/core/src/tal.c" />
+          <file file_name="../library/tal_frdmk64f/core/src/talcom.c" />
+          <file file_name="../library/tal_frdmk64f/core/src/taldebug.c" />
+          <file file_name="../library/tal_frdmk64f/core/src/talmem.c" />
+          <file file_name="../library/tal_frdmk64f/core/src/talmisc.c" />
+        </folder>
+        <folder Name="cpu">
+          <folder Name="sdk">
+            <folder Name="cmsis">
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/cmsis/device/system_MK64F12.c">
+                <configuration
+                  Name="Common"
+                  default_code_section=".init"
+                  default_const_section=".init_rodata" />
+              </file>
+            </folder>
+            <folder Name="components" />
+            <folder Name="drivers">
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_clock.c" />
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_ftfx_cache.c" />
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_ftfx_controller.c" />
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_ftfx_flash.c" />
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_sdhc.c" />
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_uart.c" />
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/drivers/fsl_wdog.c" />
+            </folder>
+            <folder Name="osa_port">
+              <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/osa_port/fsl_os_abstraction_tcts.c" />
+            </folder>
+            <folder Name="sdmmc">
+              <folder Name="common">
+                <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/middleware/sdmmc/common/fsl_sdmmc_common.c" />
+              </folder>
+              <folder Name="host">
+                <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/middleware/sdmmc/host/sdhc/non_blocking/fsl_sdmmc_host.c" />
+              </folder>
+              <folder Name="osa">
+                <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/middleware/sdmmc/osa/fsl_sdmmc_osa.c" />
+              </folder>
+              <folder Name="sd">
+                <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/sdk/v2110/middleware/sdmmc/sd/fsl_sd.c" />
+              </folder>
+            </folder>
+          </folder>
+          <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/src/talcpu.c" />
+          <file file_name="../library/tal_frdmk64f/cpu/nxp/k64/src/talcpu_com.c" />
+        </folder>
+      </folder>
+      <folder Name="tcts">
+        <file file_name="../library/tcts/src/tcts.c" />
+      </folder>
+    </folder>
+    <folder Name="src">
+      <file file_name="../src/flash.c" />
+      <file file_name="../src/main.c" />
+      <file file_name="../src/terminal.c" />
+      <file file_name="../src/xmempool.c" />
+    </folder>
+    <folder Name="System Files">
+      <file file_name="MK64F12_Startup.s" />
+      <file file_name="MK64F12_Vectors.s">
+        <configuration Name="Common" file_type="Assembly" />
+      </file>
+      <file file_name="thumb_crt0.s" />
+    </folder>
+  </project>
+</solution>

@@ -1,0 +1,12 @@
+#
+# Ignore files by file types
+#
+**/*.bak
+
+#
+# Some more specific rules
+#
+prj/Flash to RAM Debug/
+prj/Flash to RAM Release/
+prj/RAM Debug/
+prj/RAM Release/

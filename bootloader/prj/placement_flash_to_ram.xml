@@ -1,0 +1,34 @@
+<!DOCTYPE Linker_Placement_File>
+<Root name="Flash Section Placement">
+  <MemorySegment name="FLASH">
+    <ProgramSection alignment="0x100"  load="Yes" name=".vectors" />
+    <ProgramSection alignment="4"      load="Yes" name=".init" />
+    <ProgramSection alignment="4"      load="Yes" name=".init_rodata" />
+    <ProgramSection alignment="4"      load="Yes" name=".text"   runin=".text_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".dtors"  runin=".dtors_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".ctors"  runin=".ctors_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".rodata" runin=".rodata_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".data"   runin=".data_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".fast"   runin=".fast_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".tdata"  runin=".tdata_run" />
+  </MemorySegment>
+  <MemorySegment name="RAM1">
+    <ProgramSection alignment="0x100" load="No" name=".vectors_ram" start="$(RAM1_START:)" />
+    <ProgramSection alignment="4"     load="No" name=".text_run" />
+    <ProgramSection alignment="4"     load="No" name=".dtors_run" />
+    <ProgramSection alignment="4"     load="No" name=".ctors_run" />
+    <ProgramSection alignment="4"     load="No" name=".rodata_run" />
+    <ProgramSection alignment="4"     load="No" name=".fast_run" />
+    <ProgramSection alignment="4"     load="No" name=".non_init" />
+  </MemorySegment>
+  <MemorySegment name="RAM2">
+    <ProgramSection alignment="4"     load="No" name=".data_run" />
+    <ProgramSection alignment="4"     load="No" name=".bss" />
+    <ProgramSection alignment="4"     load="No" name=".tbss" />
+    <ProgramSection alignment="4"     load="No" name=".tdata_run" />
+    <ProgramSection alignment="4"     load="No" name=".task_stack" />
+    <ProgramSection alignment="8"     load="No" name=".heap" size="__HEAPSIZE__" />
+    <ProgramSection alignment="8"     load="No" name=".stack" size="__STACKSIZE__" />
+    <ProgramSection alignment="8"     load="No" name=".stack_process" size="__STACKSIZE_PROCESS__" />
+  </MemorySegment>
+</Root>
