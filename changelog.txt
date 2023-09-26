@@ -2,12 +2,16 @@
 * Project: tinyone-frdmk64f
 * Name   : "TinyONE"
 * Target : NXP FRDM-K64F
-* Version: 20230902
+* Version: 20230926
 ***************************************************************************
-* Tools  : SEGGER Embedded Studio for ARM v7.30
+* Tools  : SEGGER Embedded Studio for ARM v7.32
 ***************************************************************************
 * URL    : https://www.emb4fun.de/projects/tone/index.html
 ***************************************************************************
+
+= 26.09.2023
+   * New lwIP version STABLE-2_2_0_RELEASE used.
+   * Used SEGGER Embedded Studio for ARM v7.32.   
 
 = Version 1.05 / 1.10, 02.09.2023
    * First version for GitHub.
