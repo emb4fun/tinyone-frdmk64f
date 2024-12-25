@@ -1,5 +1,5 @@
 /**************************************************************************
-*  Copyright (c) 2020-2022 by Michael Fischer (www.emb4fun.de).
+*  Copyright (c) 2020-2024 by Michael Fischer (www.emb4fun.de).
 *  All rights reserved.
 *
 *  Redistribution and use in source and binary forms, with or without
@@ -159,6 +159,8 @@ static void SecFunction (void)
 {
    static int nOldMode = 1;
    static int nNewMode = 1;
+   uint16_t   wSpeed;
+   uint8_t    bDuplex;
    char        Buffer[16];
 
    if (1 == nDHCPCallbackBound)
@@ -191,6 +193,22 @@ static void SecFunction (void)
       /* Check for available */
       if ((0 == nOldMode) && (1 == nNewMode))
       {
+         term_printf("Iface 0: ");
+         IP_IF_LinkSpeedDuplexGet(0, &wSpeed, &bDuplex);
+         switch (wSpeed)
+         {
+            case 10:   term_printf("10 Mbit/s ");  break;
+            case 100:  term_printf("100 Mbit/s "); break;
+            case 1000: term_printf("1 Gbit/s ");   break;
+            default:   term_printf("? Mbit/s ");   break;
+         }
+         switch (bDuplex)
+         {
+            case 0:  term_printf("half duplex\r\n"); break;
+            case 1:  term_printf("full duplex\r\n"); break;
+            default: term_printf("? duplex\r\n");    break;
+         }
+
          if (etc_IPDhcpIsUsed() != 0)
          {
             /* LED mode will be set in DHCPCallbackBound */
@@ -251,8 +269,9 @@ static void EthernetInit (void)
    /* Start the DHCP service */
    if (etc_IPDhcpIsUsed() != 0)
    {
-      /* mDNS wil be started later, if DHCP is bound */
+      /* mDNS will be started later, if DHCP is bound */
       IP_DHCP_CallbackSet(0, DHCPCallbackBound);
+      //IP_DHCP_TimeoutSet(0, 3000);
       IP_DHCP_Start(0);
    }
    else

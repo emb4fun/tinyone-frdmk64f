@@ -1,5 +1,5 @@
 /**************************************************************************
-*  Copyright (c) 2021 by Michael Fischer (www.emb4fun.de).
+*  Copyright (c) 2021-2024 by Michael Fischer (www.emb4fun.de).
 *  All rights reserved.
 *
 *  Redistribution and use in source and binary forms, with or without 
@@ -29,11 +29,6 @@
 *  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF 
 *  THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
 *  SUCH DAMAGE.
-*
-***************************************************************************
-*  History:
-*
-*  06.02.2021  mifi  First Version.
 **************************************************************************/
 #define __FSL_OS_ABSTRACTION_TCTS_C__
 
@@ -383,8 +378,6 @@ osa_status_t OSA_MsgQCreate (osa_msgq_handle_t msgqHandle, uint32_t msgNo, uint3
    osa_status_t   Status = KOSA_StatusError;
    msgq_t       *pMSGQ;
    uint8_t      *pBuffer;
-   
-   uint32_t       Value;
    
    if (msgqHandle != NULL)
    {

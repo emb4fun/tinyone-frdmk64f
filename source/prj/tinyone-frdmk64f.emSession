@@ -2,14 +2,16 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <BreakpointListItem trigger="" line="500" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../src/main.c" useHWbreakpoint="false"/>
   <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBuffer>
-  <FrameBufferWindow width="0" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="0" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="tinyone-frdmk64f_Flash Release" addressText="" accessByDisplayWidth="0"/>
+  <FrameBufferWindow width="16843009" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="16843009" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="tinyone-frdmk64f_Flash Debug" addressText="" accessByDisplayWidth="0"/>
+  <FrameBufferWindow width="16843009" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="16843009" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="tinyone-frdmk64f_Flash Release" addressText="" accessByDisplayWidth="0"/>
  </FrameBuffer>
  <Memory1>
-  <MemoryWindow addressSpace="" dataSize="4" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="tinyone-frdmk64f_Flash Debug" sizeText="128" addressText="0x10200"/>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="tinyone-frdmk64f_Flash Debug" sizeText="" addressText=""/>
   <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="tinyone-frdmk64f_Flash Release" sizeText="" addressText=""/>
  </Memory1>
  <Memory2>
@@ -28,14 +30,12 @@
   <ProjectSessionItem path="tinyone-frdmk64f"/>
   <ProjectSessionItem path="tinyone-frdmk64f;tinyone-frdmk64f"/>
   <ProjectSessionItem path="tinyone-frdmk64f;tinyone-frdmk64f;Source Files"/>
-  <ProjectSessionItem path="tinyone-frdmk64f;tinyone-frdmk64f;Source Files;common"/>
-  <ProjectSessionItem path="tinyone-frdmk64f;tinyone-frdmk64f;Source Files;common;library"/>
   <ProjectSessionItem path="tinyone-frdmk64f;tinyone-frdmk64f;Source Files;src"/>
   <ProjectSessionItem path="tinyone-frdmk64f;tinyone-frdmk64f;System Files"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="tinyone-frdmk64f_Flash Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
-  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="tinyone-frdmk64f_Flash Release" decimalNodes="" octalNodes="" unsignedNodes=""/>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="tinyone-frdmk64f_Flash Release" decimalNodes="" octalNodes="" unsignedNodes=""/>
  </Register1>
  <Register2>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="tinyone-frdmk64f_Flash Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -68,8 +68,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="559" useTextEdit="1" path="../src/main.c" left="0" selected="1" top="545" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="131" useTextEdit="1" path="MK64F12_Startup.s" left="0" top="117" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="578" useTextEdit="1" path="../src/main.c" left="0" selected="1" top="557" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="tinyone-frdmk64f" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Flash Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Projekte/Embedded/Tiny/tinyone-frdmk64f/source/common/webpage" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="tinyone-frdmk64f" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Flash Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Projekte/Embedded/Tiny/tinyone-frdmk64f/source/common/library/tal_frdmk64f/board/frdmk64f/src" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

@@ -128,7 +128,7 @@ void SystemWaitSW2 (void)
       value = GPIOC->PDIR & (1 << 6);
    }
 
-} /* SystemWaitSW3 */
+} /* SystemWaitSW2 */
 
 /* ----------------------------------------------------------------------------
    -- SystemInit()

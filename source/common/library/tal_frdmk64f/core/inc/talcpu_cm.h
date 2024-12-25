@@ -1,7 +1,7 @@
 /**************************************************************************
 *  This file is part of the TAL project (Tiny Abstraction Layer)
 *
-*  Copyright (c) 2013-2023 by Michael Fischer (www.emb4fun.de).
+*  Copyright (c) 2013-2024 by Michael Fischer (www.emb4fun.de).
 *  All rights reserved.
 *
 *  Redistribution and use in source and binary forms, with or without 
@@ -38,6 +38,7 @@
 /**************************************************************************
 *  Includes
 **************************************************************************/
+#include "cmsis_compiler.h"
 
 /**************************************************************************
 *  Global Definitions
@@ -71,6 +72,11 @@
 #if defined(RTOS_FREERTOS)
 #define TAL_CPU_IRQ_ENTER()   portDISABLE_INTERRUPTS()   
 #define TAL_CPU_IRQ_EXIT()    portENABLE_INTERRUPTS()
+#endif
+
+#if defined(RTOS_EMBOS)
+#define TAL_CPU_IRQ_ENTER()   OS_INT_Enter()
+#define TAL_CPU_IRQ_EXIT()    OS_INT_Leave()
 #endif
 
 #endif /* defined(_lint) */

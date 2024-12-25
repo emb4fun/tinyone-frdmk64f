@@ -55,6 +55,10 @@
 #include "usb_device_ccid.h"
 #endif
 
+#if ((defined(USB_DEVICE_CONFIG_MYBULK)) && (USB_DEVICE_CONFIG_MYBULK > 0U))
+#include "usb_device_my_bulk.h"
+#endif
+
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -113,6 +117,10 @@ static const usb_device_class_map_t s_UsbDeviceClassInterfaceMap[] = {
 
 #if ((defined USB_DEVICE_CONFIG_CCID) && (USB_DEVICE_CONFIG_CCID > 0U))
     {USB_DeviceCcidInit, USB_DeviceCcidDeinit, USB_DeviceCcidEvent, kUSB_DeviceClassTypeCcid},
+#endif
+
+#if ((defined(USB_DEVICE_CONFIG_MYBULK)) && (USB_DEVICE_CONFIG_MYBULK > 0U))
+    {USB_DeviceMyBulkInit, USB_DeviceMyBulkDeinit, USB_DeviceMyBulkEvent, kUSB_DeviceClassTypeMyBulk},
 #endif
 
     /* please make sure the following member is in the end of s_UsbDeviceClassInterfaceMap*/
@@ -352,9 +360,15 @@ usb_status_t USB_DeviceClassEvent(usb_device_handle handle, usb_device_class_eve
                  * kStatus_USB_InvalidRequest. */
                 if (kStatus_USB_InvalidRequest == errorReturn)
                 {
+                    /* For composite device, it should return kStatus_USB_Success once a valid request has been handled
+                     */
+                    if (kStatus_USB_Success == status)
+                    {
+                        return kStatus_USB_Success;
+                    }
                     return kStatus_USB_InvalidRequest;
                 }
-                /* For composite device, it should return kStatus_USB_Success once a valid request has been handled */
+                /* For composite device, save kStatus_USB_Success status once a valid request has been handled */
                 if (kStatus_USB_Success == errorReturn)
                 {
                     status = kStatus_USB_Success;

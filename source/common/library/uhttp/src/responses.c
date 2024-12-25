@@ -38,6 +38,10 @@
 
 #include "tcts.h"
 #include "xmem.h"
+#include "ipweb.h"
+
+#include "lwip\api.h"
+#include "lwip\priv\sockets_priv.h"
 
 #include <cfg/http.h>
 #if !defined(HTTPD_EXCLUDE_DATE)
@@ -163,12 +167,29 @@ const char *HttpResponseText(int code)
     return rp;
 }
 
+int __attribute__((weak)) IP_WEBS_IsRunnungSSL (void)
+{
+    return(0);
+}
+
 void HttpSendStreamHeaderTop(HTTP_STREAM *stream, int status)
 {
     static const char fmt_P[] = "HTTP/%d.%d %d %s\r\nServer: uHTTP\r\n";
 
     s_printf(stream, fmt_P, HTTP_MAJOR_VERSION, HTTP_MINOR_VERSION, status, HttpResponseText(status));
 
+    /* Check if SSL is running */ 
+    if (1 == IP_WEBS_IsRunnungSSL())
+    {
+        /* Check if this is a SSL socket */
+        struct lwip_sock *sock = lwip_socket_dbg_get_socket(stream->strm_csock);
+        if (sock->conn->ssl != NULL)
+        {
+            /* Add HSTS header */ 
+            s_puts("Strict-Transport-Security: max-age=31536000; includeSubDomains\r\n", stream);
+        }
+    }
+    
 #if !defined(HTTPD_EXCLUDE_DATE)
     {
         time_t now = OS_UnixtimeGet();

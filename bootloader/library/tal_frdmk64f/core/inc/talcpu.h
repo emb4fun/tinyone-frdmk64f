@@ -1,7 +1,7 @@
 /**************************************************************************
 *  This file is part of the TAL project (Tiny Abstraction Layer)
 *
-*  Copyright (c) 2013-2023 by Michael Fischer (www.emb4fun.de).
+*  Copyright (c) 2013-2024 by Michael Fischer (www.emb4fun.de).
 *  All rights reserved.
 *
 *  Redistribution and use in source and binary forms, with or without
@@ -51,7 +51,7 @@
 /*
  * Check for Cortex-M and Cortex-M0 style CPU
  */
-#if defined(__ARM_ARCH_7EM__) || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_6M__)
+#if defined(__ARM_ARCH_7EM__) || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_6M__) || defined(__ARM_ARCH_8M_MAINLINE__)
 #include "talcpu_cm.h"
 #endif
 

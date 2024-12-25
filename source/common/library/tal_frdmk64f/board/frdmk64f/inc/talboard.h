@@ -143,6 +143,15 @@ uint8_t SD_Detect (void);
 #endif
 
 
+/*
+ * USB Device
+ */
+uint8_t USB_ControllerIdGet (void);
+void    USB_DeviceClockInit (void);
+void    USB_DeviceIsrEnable (void);
+
+#define USB_DeviceIsrFunction    USB_DeviceKhciIsrFunction
+
 #endif /* !USE_BOARD_FRDMK64F */
 
 /*** EOF ***/

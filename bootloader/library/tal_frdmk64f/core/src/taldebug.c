@@ -41,6 +41,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "talos.h"
+#include "taldebug.h"
 #include "terminal.h"
 
 /*=======================================================================*/

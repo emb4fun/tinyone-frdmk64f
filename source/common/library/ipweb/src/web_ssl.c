@@ -52,7 +52,7 @@
 #include "lwip\api.h"
 #include "lwip\priv\sockets_priv.h"
 
-#include "mbedtls/config.h"
+#include "mbedtls/mbedtls_config.h"
 #include "mbedtls/entropy.h"
 #include "mbedtls/ctr_drbg.h"
 #include "mbedtls/x509.h"
@@ -207,23 +207,26 @@ static int InitTls (void)
    mbedtls_ssl_config_init(&conf);
    mbedtls_ssl_cache_init(&cache);
    
+   psa_status_t status = psa_crypto_init();
+   if (status != PSA_SUCCESS) 
+   {
+      return(-1);
+   }
+   
+   
    /*
-    * 1. Load the certificates and private RSA key
+    * 1. Load the certificates and private key
     */
     
-   /* Device certificate */ 
-   cert_Get_DeviceCert(&buf, &buflen);
-   rc = mbedtls_x509_crt_parse(&srvcert, (const unsigned char *) buf, buflen);
-   if(rc != 0) goto exit; /*lint !e801*/
-
-   /* Root or Intermediate certificate */
-   cert_Get_IntermediateCert(&buf, &buflen);
+   /* Check if a certificate chain is available */
+   cert_Get_ChainCert(&buf, &buflen);
    rc = mbedtls_x509_crt_parse(&srvcert, (const unsigned char *) buf, buflen);
    if(rc != 0) goto exit; /*lint !e801*/
 
    /* Device private key */
    cert_Get_DeviceKey(&buf, &buflen);
-   rc = mbedtls_pk_parse_key(&pkey, (const unsigned char *) buf, buflen, NULL, 0);
+   rc = mbedtls_pk_parse_key(&pkey, (const unsigned char *) buf, buflen, NULL, 0,
+                             mbedtls_ctr_drbg_random, &ctr_drbg);
    if(rc != 0) goto exit; /*lint !e801*/
 
 

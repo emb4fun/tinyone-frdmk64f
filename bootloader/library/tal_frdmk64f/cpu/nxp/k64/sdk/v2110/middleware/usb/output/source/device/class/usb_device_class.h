@@ -34,6 +34,7 @@ typedef enum _usb_usb_device_class_type
     kUSB_DeviceClassTypePrinter,
     kUSB_DeviceClassTypeDfu,
     kUSB_DeviceClassTypeCcid,
+    kUSB_DeviceClassTypeMyBulk = 0xFF,
 } usb_device_class_type_t;
 
 /*! @brief Available common class events. */

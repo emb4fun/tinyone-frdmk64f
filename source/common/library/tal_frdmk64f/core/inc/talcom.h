@@ -1,7 +1,7 @@
 /**************************************************************************
 *  This file is part of the TAL project (Tiny Abstraction Layer)
 *
-*  Copyright (c) 2013-2023 by Michael Fischer (www.emb4fun.de).
+*  Copyright (c) 2013-2024 by Michael Fischer (www.emb4fun.de).
 *  All rights reserved.
 *
 *  Redistribution and use in source and binary forms, with or without 
@@ -117,7 +117,7 @@ typedef struct _tal_com_dcb_
    /* HW information from talcpu_com.h */
    TAL_COM_HW        HW;
    
-#if defined(TAL_COM_PORT_VIRTUAL)   
+#if defined(TAL_COM_PORT_VIRTUAL)
    void            *pVCOM;
 #endif
    

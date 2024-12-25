@@ -20,7 +20,6 @@
       arm_architecture="v7EM"
       arm_core_type="Cortex-M4"
       arm_endian="Little"
-      arm_fp_abi="Hard"
       arm_fpu_type="FPv4-SP-D16"
       arm_interwork="No"
       arm_linker_heap_size="256"
@@ -71,6 +70,7 @@
       </folder>
       <folder Name="tal">
         <folder Name="board">
+          <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/clock_config.c" />
           <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/fatfs_diskio.c" />
           <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/sdmmc_config.c" />
           <file file_name="../library/tal_frdmk64f/board/frdmk64f/src/talboard.c" />

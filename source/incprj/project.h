@@ -1,5 +1,5 @@
 /**************************************************************************
-*  Copyright (c) 2020-2022 by Michael Fischer (www.emb4fun.de).
+*  Copyright (c) 2020-2024 by Michael Fischer (www.emb4fun.de).
 *  All rights reserved.
 *
 *  Redistribution and use in source and binary forms, with or without
@@ -49,7 +49,7 @@
 
 #define PROJECT_VER_MAJOR     1
 #define PROJECT_VER_MINOR_1   0
-#define PROJECT_VER_MINOR_2   5
+#define PROJECT_VER_MINOR_2   6
 
 #define PROJECT_VER_NUMBER    ((PROJECT_VER_MAJOR * 100) + (PROJECT_VER_MINOR_1 * 10) + PROJECT_VER_MINOR_2)
 
