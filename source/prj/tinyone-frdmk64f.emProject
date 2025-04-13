@@ -54,7 +54,7 @@
     <configuration
       Name="Release"
       c_preprocessor_definitions="__RELEASE__"
-      gcc_optimization_level="Level 2 for speed" />
+      gcc_optimization_level="Level 2 balanced" />
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <folder Name="common">
